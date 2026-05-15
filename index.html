@@ -3,144 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAL ARCHIVE // 83</title>
+    <title>AI ORCHESTRATED MUSEUM | SIGNAL 83</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="grid-bg">
 
-    <div class="scanline"></div>
     <nav class="fixed w-full z-50 p-6 flex justify-between items-center border-b border-blue-500/30 backdrop-blur-md">
         <div class="flex items-center gap-4">
-            <div class="w-10 h-10 border-2 border-red-600 flex items-center justify-center text-xs font-bold text-red-500 animate-pulse">REC</div>
-            <span class="tracking-[0.4em] text-[11px] font-bold text-blue-400">COMM_HISTORY // DEEP_ARCHIVE</span>
+            <div class="w-10 h-10 border-2 border-red-600 flex items-center justify-center text-xs font-bold text-red-500 animate-pulse shadow-[0_0_15px_red]">AI</div>
+            <span class="tracking-[0.4em] text-[10px] font-bold text-blue-400">DIGITAL_MUSEUM // ARCHIVE_83</span>
         </div>
-        <div class="text-[10px] text-blue-500/50 mono hidden md:block">LATENCY: 0.002ms // ENCRYPTION: AES-256</div>
+        <div class="text-[10px] text-blue-500/50 mono hidden md:block">STATUS: SECURE // SIGNAL_STRENGTH: 100%</div>
     </nav>
 
-    <header class="relative h-screen flex flex-col justify-center items-center text-center p-6 border-b border-blue-900">
-        <div id="hero-canvas-container" class="absolute inset-0 z-0 opacity-40"></div>
+    <header class="relative h-screen flex flex-col justify-center items-center text-center p-6">
+        <div class="scanline"></div>
+        <canvas id="hero-electric-canvas" class="absolute inset-0 z-0 opacity-30"></canvas>
+        
         <div class="relative z-10">
-            <p class="text-red-500 mb-4 text-xs tracking-[0.8em] animate-pulse">INITIATING EVOLUTION_LOG</p>
-            <h1 class="text-6xl md:text-9xl font-black italic tracking-tighter text-white uppercase border-y-4 border-blue-600 py-4">
-                SIGNAL<span class="text-red-600">_</span>
-            </h1>
-            <p class="mt-6 max-w-xl mx-auto text-blue-300/60 text-xs mono uppercase leading-relaxed">
-                Tracing the trajectory of human thought from physical smoke to neural synchronization.
+            <p class="text-red-500 mb-4 text-xs tracking-[1em] animate-pulse">INITIATING MUSEUM SEQUENCE</p>
+            <h1 class="text-6xl md:text-9xl font-black italic tracking-tighter text-white uppercase">SIGNAL<span class="text-red-600">_</span></h1>
+            <p class="mt-6 max-w-2xl mx-auto text-blue-300/60 text-[10px] mono uppercase leading-relaxed tracking-widest">
+                Evolution of Communication: From Cave Paintings to Neural Synchronization.
             </p>
+            <div class="mt-10 inline-block px-8 py-3 border border-red-600 text-red-500 text-[10px] tracking-widest hover:bg-red-600 hover:text-white transition cursor-pointer">
+                ENTER ARCHIVE
+            </div>
         </div>
     </header>
 
-    <section class="p-12 md:p-24 space-y-20">
-        <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-3xl font-bold text-red-600 italic uppercase">Five Eras of Transmission</h2>
-            <div class="h-[2px] flex-grow bg-gradient-to-r from-red-600 to-transparent"></div>
-        </div>
+    <main class="relative z-10 max-w-6xl mx-auto p-6 md:p-20 space-y-40">
 
-        <div class="grid md:grid-cols-5 gap-4">
-            <div class="era-card">
-                <span class="text-red-500 text-[10px]">01</span>
-                <h3>ORAL</h3>
-                <p>The dawn of memory and rhythmic speech.</p>
+        <section class="museum-card border-l-4 border-blue-600 pl-10 relative">
+            <span class="text-red-500 mono text-xs">ARCHIVE_NODE_01 // PREHISTORY</span>
+            <h2 class="text-4xl font-black text-white italic mb-6">EARLY COMMUNICATION & WRITING</h2>
+            <div class="grid md:grid-cols-2 gap-10 text-blue-100/70 text-sm leading-relaxed">
+                <div class="space-y-4">
+                    <p><strong class="text-blue-400 uppercase">Prehistoric (100,000 BCE):</strong> Originated with spoken language, followed by oral storytelling and cave art like Chauvet (30,000 BCE) to record data.</p>
+                    <p><strong class="text-blue-400 uppercase">Symbolic:</strong> Petroglyphs (10,000 BCE) and Pictograms evolved into Ideograms, paving the way for abstract thought.</p>
+                </div>
+                <div class="border border-blue-500/20 p-6 bg-blue-900/5">
+                    <canvas id="canvas-optical" class="w-full h-32"></canvas>
+                    <p class="text-[9px] mt-2 text-center text-blue-500">SIGNAL_VISUALIZATION: OPTICAL_TELEGRAPH</p>
+                </div>
             </div>
-            <div class="era-card">
-                <span class="text-red-500 text-[10px]">02</span>
-                <h3>WRITTEN</h3>
-                <p>The externalization of thought onto clay and paper.</p>
+        </section>
+
+        <section class="museum-card border-l-4 border-red-600 pl-10">
+            <span class="text-red-500 mono text-xs">ARCHIVE_NODE_02 // 1440 - 1814</span>
+            <h2 class="text-4xl font-black text-white italic mb-6 text-glow-red">THE AGE OF PRINT</h2>
+            <div class="space-y-6 text-blue-100/70 text-sm">
+                <p><strong class="text-red-500">Gutenberg Press (1440):</strong> The democratization of knowledge. Mass production of documents changed human consciousness forever.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="stats-box"><span>1440</span><br>PRESS</div>
+                    <div class="stats-box"><span>1814</span><br>STEAM</div>
+                    <div class="stats-box"><span>3200 BCE</span><br>CUNEIFORM</div>
+                    <div class="stats-box"><span>200 BCE</span><br>PAPER</div>
+                </div>
             </div>
-            <div class="era-card">
-                <span class="text-red-500 text-[10px]">03</span>
-                <h3>PRINT</h3>
-                <p>Mass replication of data nodes across society.</p>
+        </section>
+
+        <section class="museum-card border-l-4 border-blue-600 pl-10">
+            <span class="text-red-500 mono text-xs">ARCHIVE_NODE_03 // 19TH-20TH CENTURY</span>
+            <h2 class="text-4xl font-black text-white italic mb-6">TELECOMMUNICATIONS BOOM</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <ul class="space-y-4 text-xs mono text-blue-300">
+                    <li class="flex gap-4"><span class="text-red-500">[1844]</span> MORSE TELEGRAPH: INSTANT DATA</li>
+                    <li class="flex gap-4"><span class="text-red-500">[1876]</span> BELL TELEPHONE: VOICE BRIDGE</li>
+                    <li class="flex gap-4"><span class="text-red-500">[1896]</span> MARCONI WIRELESS: RADIO WAVES</li>
+                    <li class="flex gap-4"><span class="text-red-500">[1927]</span> TELEVISION: MASS VISUALS</li>
+                </ul>
+                <div class="bg-black p-4 border border-blue-500/30">
+                    <canvas id="canvas-radio" class="w-full h-32"></canvas>
+                    <p class="text-[9px] text-center text-blue-500 mt-2">ANALOG WAVEFORM ANALYSIS</p>
+                </div>
             </div>
-            <div class="era-card">
-                <span class="text-red-500 text-[10px]">04</span>
-                <h3>ELECTRIC</h3>
-                <p>Speed of light communication via the telegraph.</p>
+        </section>
+
+        <section class="museum-card border-l-4 border-red-600 pl-10 bg-red-950/5 p-6">
+            <span class="text-red-500 mono text-xs">ARCHIVE_NODE_04 // MODERN_ERA</span>
+            <h2 class="text-4xl font-black text-white italic mb-6">THE DIGITAL REVOLUTION</h2>
+            <div class="space-y-6 text-sm text-blue-100/70">
+                <p>From the first email in <span class="text-blue-400">1965</span> to <span class="text-blue-400">ARPANET (1969)</span>, the foundation of the global whispering-gallery was laid.</p>
+                <div class="p-6 border border-red-600/30 bg-black relative overflow-hidden">
+                    <canvas id="canvas-neural" class="w-full h-40"></canvas>
+                    <div class="absolute top-2 right-2 text-[8px] text-red-500 animate-pulse">NEURAL_SYNC_ACTIVE</div>
+                </div>
             </div>
-            <div class="era-card">
-                <span class="text-red-500 text-[10px]">05</span>
-                <h3>DIGITAL</h3>
-                <p>Instantaneous global neural-web integration.</p>
-            </div>
+        </section>
+
+    </main>
+
+    <section class="p-10 md:p-20 bg-blue-900/10 border-y border-blue-500/20">
+        <h3 class="text-center text-red-500 text-xs tracking-[0.5em] mb-20 uppercase">Key Milestones in History</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div class="milestone"><strong>1973</strong> First Mobile Call</div>
+            <div class="milestone"><strong>1989</strong> Invention of World Wide Web</div>
+            <div class="milestone"><strong>2007</strong> iPhone / The Mobile Age</div>
         </div>
     </section>
 
-    <section class="p-12 md:p-24 bg-black/40">
-        <h2 class="text-xs tracking-[0.5em] text-blue-400 mb-10 mono">VISUALIZING_SIGNAL_WAVES</h2>
-        
-        <div class="grid md:grid-cols-2 gap-10">
-            <div class="signal-box">
-                <div class="flex justify-between text-[10px] mb-2 mono"><span>OPTICAL_TELEGRAPH</span><span class="text-red-500 font-bold">PHYSICAL_LINE</span></div>
-                <canvas id="canvas-optical" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
-            </div>
-            <div class="signal-box">
-                <div class="flex justify-between text-[10px] mb-2 mono"><span>NOISE_PULSE</span><span class="text-red-500 font-bold">INTERFERENCE</span></div>
-                <canvas id="canvas-noise" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
-            </div>
-            <div class="signal-box">
-                <div class="flex justify-between text-[10px] mb-2 mono"><span>RADIO_WAVELENGTH</span><span class="text-red-500 font-bold">ANALOG_HF</span></div>
-                <canvas id="canvas-radio" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
-            </div>
-            <div class="signal-box">
-                <div class="flex justify-between text-[10px] mb-2 mono"><span>NEURAL_PACKET</span><span class="text-red-500 font-bold">SYNAPTIC_FIRE</span></div>
-                <canvas id="canvas-neural" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
-            </div>
+    <footer class="p-40 text-center relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="text-7xl font-black text-red-600 italic tracking-tighter animate-pulse uppercase">End Transmission</h2>
+            <p class="mt-4 text-[10px] text-blue-500 tracking-[1em] mono">ARCHIVE_SYNC_SUCCESSFUL // MUSEUM_OFFLINE</p>
         </div>
-    </section>
-
-    <section class="p-12 md:p-24 space-y-12">
-        <h2 class="text-5xl font-black italic text-white uppercase italic">Defining Moments</h2>
-        <div class="border-l-2 border-red-600 pl-8 space-y-10">
-            <div class="moment">
-                <h4 class="text-blue-400 font-bold">1837: THE MORSE BREAKTHROUGH</h4>
-                <p class="text-xs text-blue-200/50">Language converted to electrical pulses. Time was defeated.</p>
-            </div>
-            <div class="moment">
-                <h4 class="text-blue-400 font-bold">1969: THE FIRST ARPANET LOG</h4>
-                <p class="text-xs text-blue-200/50">The birth of the planetary brain. Computers began to speak.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="p-20 text-center border-t border-red-600/30">
-        <div class="text-6xl font-black text-red-600 animate-pulse mb-4">END_TRANSMISSION</div>
-        <p class="text-[10px] tracking-[1em] text-blue-500">ARCHIVE_COMPLETE // SYSTEM_OFFLINE</p>
-    </footer>
+    </footer >
 
     <script>
-        function createWave(id, color, type) {
+        function initCanvas(id, type, color) {
             const canvas = document.getElementById(id);
             const ctx = canvas.getContext('2d');
-            let offset = 0;
+            let time = 0;
 
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
                 ctx.strokeStyle = color;
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 1.5;
 
                 for (let x = 0; x < canvas.width; x++) {
-                    let y;
-                    if (type === 'radio') y = 40 + Math.sin(x * 0.05 + offset) * 20;
-                    else if (type === 'noise') y = 40 + (Math.random() - 0.5) * 40;
-                    else if (type === 'optical') y = x % 40 < 20 ? 20 : 60;
-                    else if (type === 'neural') y = 40 + Math.sin(x * 0.1 + offset) * Math.cos(x * 0.02) * 30;
-                    
+                    let y = 75;
+                    if (type === 'hero') {
+                        y = 75 + Math.sin(x * 0.02 + time) * 30 + Math.cos(x * 0.05 + time) * 20;
+                    } else if (type === 'radio') {
+                        y = 75 + Math.sin(x * 0.1 + time) * 25;
+                    } else if (type === 'neural') {
+                        y = 75 + Math.tan(x * 0.01 + time) * 5; // Glitchy digital look
+                        if(y > 150 || y < 0) y = 75; 
+                    } else if (type === 'optical') {
+                        y = x % 60 < 30 ? 40 : 110; // Blocky signals
+                    }
                     ctx.lineTo(x, y);
                 }
                 ctx.stroke();
-                offset += 0.1;
+                time += 0.05;
                 requestAnimationFrame(animate);
             }
             animate();
         }
 
-        createWave('canvas-optical', '#3b82f6', 'optical');
-        createWave('canvas-noise', '#dc2626', 'noise');
-        createWave('canvas-radio', '#3b82f6', 'radio');
-        createWave('canvas-neural', '#ef4444', 'neural');
+        window.onload = () => {
+            initCanvas('hero-electric-canvas', 'hero', '#0ea5e9');
+            initCanvas('canvas-optical', 'optical', '#dc2626');
+            initCanvas('canvas-radio', 'radio', '#0ea5e9');
+            initCanvas('canvas-neural', 'neural', '#dc2626');
+        };
     </script>
 </body>
-</html> 
+</html>
