@@ -3,7 +3,7 @@
 
 > *"Every technological revolution in history has been, at its core, a revolution in communication."*
 
-🔴 **[Live Site →](https://YOUR-USERNAME.github.io/signal-museum)**
+🔴 **[Live Site →]https://claude.ai/public/artifacts/cf5050f0-e06b-41e9-854a-531c94220406**
 
 ---
 
