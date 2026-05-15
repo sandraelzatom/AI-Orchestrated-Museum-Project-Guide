@@ -1,24 +1,11 @@
-// Function to reveal eras as you scroll
-const observerOptions = {
-    threshold: 0.2
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Log to HUD when era is decoded
-            console.log(`ERA DECODED: ${entry.target.id}`);
-        }
+// SIGNAL_v0.83 : ARCHIVE_READY
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("ALL_13_NODES_STABLE");
+    
+    // Purely for logging the scroll depth
+    window.addEventListener('scroll', () => {
+        const scrolled = Math.round((window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100);
+        console.clear();
+        console.log(`CURRENT_TRANSMISSION_DEPTH: ${scrolled}%`);
     });
-}, observerOptions);
-
-document.querySelectorAll('.era').forEach(era => {
-    observer.observe(era);
-});
-
-// Simple mouse glow effect to follow "Signal"
-document.addEventListener('mousemove', (e) => {
-    const stars = document.querySelector('.stars');
-    stars.style.backgroundPosition = `${e.clientX / 50}px ${e.clientY / 50}px`;
 });
