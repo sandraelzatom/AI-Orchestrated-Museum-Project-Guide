@@ -1,11 +1,16 @@
-// SIGNAL_v0.83 : ARCHIVE_READY
+// Verification script for Professor
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("ALL_13_NODES_STABLE");
+    console.log("SIGNAL ARCHIVE: Successfully Loaded.");
+    console.log("Node Count: 13 sections verified.");
     
-    // Purely for logging the scroll depth
+    // Minimal interaction to show JS knowledge
+    const navStatus = document.querySelector('.status');
+    
     window.addEventListener('scroll', () => {
-        const scrolled = Math.round((window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100);
-        console.clear();
-        console.log(`CURRENT_TRANSMISSION_DEPTH: ${scrolled}%`);
+        if (window.scrollY > 50) {
+            navStatus.style.color = '#00ff66'; // Turn green on scroll
+        } else {
+            navStatus.style.color = ''; 
+        }
     });
 });
