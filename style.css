@@ -1,52 +1,78 @@
 :root {
-    --bg: #000814;
+    --red: #dc2626;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --purple: #9333ea;
 }
 
 body {
-    background-color: var(--bg);
+    background: #000;
     cursor: crosshair;
 }
 
 /* BLUEPRINT GRID */
-.grid-bg {
+.bg-black {
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-size: 50px 50px;
     background-attachment: fixed;
 }
 
-/* EFFECTS */
+/* HUD ELEMENTS */
 .scanline {
-    width: 100%; height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255, 0.02) 50%, transparent 100%);
-    background-size: 100% 6px;
-    position: fixed; z-index: 100; pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+    background-size: 100% 8px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    pointer-events: none;
+    animation: scan 12s linear infinite;
+}
+
+@keyframes scan {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
 }
 
 .vignette {
-    position: fixed; inset: 0;
-    background: radial-gradient(circle, transparent 40%, black 150%);
-    z-index: 90; pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, transparent 20%, black 150%);
+    z-index: 90;
+    pointer-events: none;
 }
 
-/* GLOWS */
-.text-glow-red { text-shadow: 0 0 25px #dc2626; }
-.text-glow-green { text-shadow: 0 0 25px #16a34a; }
-.text-glow-blue { text-shadow: 0 0 25px #2563eb; }
-.text-glow-purple { text-shadow: 0 0 25px #9333ea; }
-
-/* DATA DECKS */
+/* SIGNAL DECK INTERFACE */
 .signal-deck {
-    border: 1px solid rgba(255,255,255,0.05);
-    background: rgba(0,0,0,0.8);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
 }
 
-.museum-node {
-    transition: all 0.6s ease;
+.signal-deck:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+canvas {
+    width: 100%;
+    height: 150px;
+}
+
+/* TYPOGRAPHY */
+h1, h2 {
+    font-family: 'Inter', sans-serif;
+}
+
+::selection {
+    background: var(--red);
+    color: white;
 }
 
 /* CUSTOM SCROLLBAR */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-thumb { background: #fff; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #333; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
