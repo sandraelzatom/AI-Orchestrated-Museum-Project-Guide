@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNAL ARCHIVE // 83</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="grid-bg">
+
+    <div class="scanline"></div>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center border-b border-blue-500/30 backdrop-blur-md">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 border-2 border-red-600 flex items-center justify-center text-xs font-bold text-red-500 animate-pulse">REC</div>
+            <span class="tracking-[0.4em] text-[11px] font-bold text-blue-400">COMM_HISTORY // DEEP_ARCHIVE</span>
+        </div>
+        <div class="text-[10px] text-blue-500/50 mono hidden md:block">LATENCY: 0.002ms // ENCRYPTION: AES-256</div>
+    </nav>
+
+    <header class="relative h-screen flex flex-col justify-center items-center text-center p-6 border-b border-blue-900">
+        <div id="hero-canvas-container" class="absolute inset-0 z-0 opacity-40"></div>
+        <div class="relative z-10">
+            <p class="text-red-500 mb-4 text-xs tracking-[0.8em] animate-pulse">INITIATING EVOLUTION_LOG</p>
+            <h1 class="text-6xl md:text-9xl font-black italic tracking-tighter text-white uppercase border-y-4 border-blue-600 py-4">
+                SIGNAL<span class="text-red-600">_</span>
+            </h1>
+            <p class="mt-6 max-w-xl mx-auto text-blue-300/60 text-xs mono uppercase leading-relaxed">
+                Tracing the trajectory of human thought from physical smoke to neural synchronization.
+            </p>
+        </div>
+    </header>
+
+    <section class="p-12 md:p-24 space-y-20">
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl font-bold text-red-600 italic uppercase">Five Eras of Transmission</h2>
+            <div class="h-[2px] flex-grow bg-gradient-to-r from-red-600 to-transparent"></div>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-4">
+            <div class="era-card">
+                <span class="text-red-500 text-[10px]">01</span>
+                <h3>ORAL</h3>
+                <p>The dawn of memory and rhythmic speech.</p>
+            </div>
+            <div class="era-card">
+                <span class="text-red-500 text-[10px]">02</span>
+                <h3>WRITTEN</h3>
+                <p>The externalization of thought onto clay and paper.</p>
+            </div>
+            <div class="era-card">
+                <span class="text-red-500 text-[10px]">03</span>
+                <h3>PRINT</h3>
+                <p>Mass replication of data nodes across society.</p>
+            </div>
+            <div class="era-card">
+                <span class="text-red-500 text-[10px]">04</span>
+                <h3>ELECTRIC</h3>
+                <p>Speed of light communication via the telegraph.</p>
+            </div>
+            <div class="era-card">
+                <span class="text-red-500 text-[10px]">05</span>
+                <h3>DIGITAL</h3>
+                <p>Instantaneous global neural-web integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-12 md:p-24 bg-black/40">
+        <h2 class="text-xs tracking-[0.5em] text-blue-400 mb-10 mono">VISUALIZING_SIGNAL_WAVES</h2>
+        
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="signal-box">
+                <div class="flex justify-between text-[10px] mb-2 mono"><span>OPTICAL_TELEGRAPH</span><span class="text-red-500 font-bold">PHYSICAL_LINE</span></div>
+                <canvas id="canvas-optical" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
+            </div>
+            <div class="signal-box">
+                <div class="flex justify-between text-[10px] mb-2 mono"><span>NOISE_PULSE</span><span class="text-red-500 font-bold">INTERFERENCE</span></div>
+                <canvas id="canvas-noise" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
+            </div>
+            <div class="signal-box">
+                <div class="flex justify-between text-[10px] mb-2 mono"><span>RADIO_WAVELENGTH</span><span class="text-red-500 font-bold">ANALOG_HF</span></div>
+                <canvas id="canvas-radio" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
+            </div>
+            <div class="signal-box">
+                <div class="flex justify-between text-[10px] mb-2 mono"><span>NEURAL_PACKET</span><span class="text-red-500 font-bold">SYNAPTIC_FIRE</span></div>
+                <canvas id="canvas-neural" class="h-32 w-full border border-blue-500/20 bg-blue-950/10"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-12 md:p-24 space-y-12">
+        <h2 class="text-5xl font-black italic text-white uppercase italic">Defining Moments</h2>
+        <div class="border-l-2 border-red-600 pl-8 space-y-10">
+            <div class="moment">
+                <h4 class="text-blue-400 font-bold">1837: THE MORSE BREAKTHROUGH</h4>
+                <p class="text-xs text-blue-200/50">Language converted to electrical pulses. Time was defeated.</p>
+            </div>
+            <div class="moment">
+                <h4 class="text-blue-400 font-bold">1969: THE FIRST ARPANET LOG</h4>
+                <p class="text-xs text-blue-200/50">The birth of the planetary brain. Computers began to speak.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-20 text-center border-t border-red-600/30">
+        <div class="text-6xl font-black text-red-600 animate-pulse mb-4">END_TRANSMISSION</div>
+        <p class="text-[10px] tracking-[1em] text-blue-500">ARCHIVE_COMPLETE // SYSTEM_OFFLINE</p>
+    </footer>
+
+    <script>
+        function createWave(id, color, type) {
+            const canvas = document.getElementById(id);
+            const ctx = canvas.getContext('2d');
+            let offset = 0;
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+
+                for (let x = 0; x < canvas.width; x++) {
+                    let y;
+                    if (type === 'radio') y = 40 + Math.sin(x * 0.05 + offset) * 20;
+                    else if (type === 'noise') y = 40 + (Math.random() - 0.5) * 40;
+                    else if (type === 'optical') y = x % 40 < 20 ? 20 : 60;
+                    else if (type === 'neural') y = 40 + Math.sin(x * 0.1 + offset) * Math.cos(x * 0.02) * 30;
+                    
+                    ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                offset += 0.1;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        createWave('canvas-optical', '#3b82f6', 'optical');
+        createWave('canvas-noise', '#dc2626', 'noise');
+        createWave('canvas-radio', '#3b82f6', 'radio');
+        createWave('canvas-neural', '#ef4444', 'neural');
+    </script>
+</body>
+</html>
