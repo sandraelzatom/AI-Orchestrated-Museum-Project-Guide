@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAL_83 // DIGITAL MUSEUM ARCHIVE</title>
+    <title>SIGNAL_83 // MULTI-SPECTRUM ARCHIVE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -13,154 +13,162 @@
     <div class="scanline"></div>
     <div class="vignette"></div>
 
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center border-b border-blue-500/20 backdrop-blur-xl">
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center border-b border-white/10 backdrop-blur-xl">
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 border-2 border-red-600 flex items-center justify-center text-xs font-bold text-red-500 animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.4)]">LIVE</div>
+            <div class="flex gap-1">
+                <div class="w-2 h-8 bg-red-600 animate-pulse"></div>
+                <div class="w-2 h-8 bg-blue-600 animate-pulse" style="animation-delay: 0.2s"></div>
+                <div class="w-2 h-8 bg-green-600 animate-pulse" style="animation-delay: 0.4s"></div>
+                <div class="w-2 h-8 bg-purple-600 animate-pulse" style="animation-delay: 0.6s"></div>
+            </div>
             <div class="flex flex-col">
-                <span class="tracking-[0.5em] text-[10px] font-bold text-blue-400">SIGNAL_83 // ARCHIVE</span>
-                <span class="text-[8px] text-blue-500/50">SYSTEM_AUTH: GRANTED</span>
+                <span class="tracking-[0.5em] text-[10px] font-bold text-white">SIGNAL_83 // SPECTRUM_MUSEUM</span>
+                <span class="text-[8px] text-green-500 uppercase">System_Logic: Optimized</span>
             </div>
         </div>
-        <div class="hidden lg:block text-[9px] text-blue-500/40 tracking-widest uppercase">
-            Communication History // 2026_MASTER_BUILD
+        <div class="hidden lg:block text-[9px] text-white/30 tracking-widest uppercase">
+            Evolution Flow // Multi-Spectral Visualization
         </div>
     </nav>
 
-    <header class="relative h-screen flex flex-col justify-center items-center text-center p-6 border-b border-blue-900/30">
-        <canvas id="hero-glitch-canvas" class="absolute inset-0 z-0 opacity-20"></canvas>
+    <header class="relative h-screen flex flex-col justify-center items-center text-center p-6">
+        <canvas id="hero-spectrum-canvas" class="absolute inset-0 z-0 opacity-30"></canvas>
         <div class="relative z-10">
-            <p class="text-red-500 mb-2 text-[10px] tracking-[1.2em] uppercase animate-pulse">Initializing Museum Sequence</p>
-            <h1 class="text-7xl md:text-[11rem] font-black italic tracking-tighter uppercase leading-none text-glow-blue">
-                SIGNAL<span class="text-red-600">_</span>
+            <h1 class="text-7xl md:text-[10rem] font-black italic tracking-tighter uppercase leading-none">
+                EVOLVE<span class="text-purple-600 animate-pulse">_</span>
             </h1>
-            <div class="mt-8 flex flex-col items-center">
-                <div class="h-16 w-[1px] bg-gradient-to-b from-transparent to-red-600 mb-4"></div>
-                <p class="max-w-xl text-blue-300/60 text-[10px] uppercase tracking-widest leading-loose">
-                    From Prehistoric Cave Paintings to Neural Synchronization.
-                </p>
-            </div>
+            <p class="mt-8 max-w-xl text-white/50 text-[10px] uppercase tracking-[1em] leading-loose">
+                From Cave Art to Quantum Consciousness
+            </p>
         </div>
     </header>
 
-    <main class="relative z-10 max-w-7xl mx-auto py-32 px-6 space-y-80">
+    <main class="relative z-10 max-w-7xl mx-auto py-32 px-6 space-y-96">
 
-        <section class="museum-wing relative grid md:grid-cols-2 gap-16 items-center">
+        <section class="museum-node grid md:grid-cols-2 gap-20 items-center">
             <div class="order-2 md:order-1">
-                <div class="mb-6 flex items-center gap-3">
-                    <span class="w-8 h-[1px] bg-red-600"></span>
-                    <span class="text-red-500 text-[10px] tracking-widest font-bold uppercase">Archive_Node_01</span>
-                </div>
-                <h2 class="text-5xl font-black italic text-white uppercase mb-8">Early Communication</h2>
-                <div class="space-y-6 text-blue-100/70 text-sm leading-relaxed">
-                    <p><strong class="text-blue-400 uppercase">Prehistory (100k BCE):</strong> Spoken language and oral storytelling evolved into cave paintings (Chauvet Cave, 30,000 BCE) for data recording.</p>
-                    <p><strong class="text-blue-400 uppercase">Symbols:</strong> Petroglyphs (10k BCE) and Pictograms (9k BCE) led to Cuneiform writing in 3200 BCE.</p>
+                <span class="text-red-500 text-[10px] tracking-widest font-bold uppercase border-b border-red-600/50 pb-2">Node_01 // The Ancient Pulse</span>
+                <h2 class="text-5xl font-black italic uppercase mt-6 mb-8 text-glow-red">Early Communication</h2>
+                <div class="space-y-6 text-white/70 text-sm leading-relaxed">
+                    <p><strong class="text-red-400">100,000 BCE:</strong> The origin of spoken language and oral storytelling. By 30,000 BCE, humans recorded survival data via cave paintings (Chauvet Cave).</p>
+                    <p><strong class="text-red-400">Symbolic Shift:</strong> Petroglyphs (10k BCE) and Pictograms (9k BCE) evolved into Ideograms and the first writing system: <span class="text-white font-bold">Cuneiform (3200 BCE).</span></p>
                 </div>
             </div>
-            <div class="order-1 md:order-2 signal-deck border border-blue-500/20 bg-black/40 p-2">
-                <div class="bg-blue-900/5 p-6 border border-blue-500/10">
-                    <div class="flex justify-between text-[9px] mb-4 text-blue-500 uppercase font-bold"><span>OPTICAL_TELEGRAPH_PULSE</span><span>ENCODING...</span></div>
-                    <canvas id="canvas-optical" class="w-full h-48"></canvas>
-                </div>
+            <div class="signal-deck border-red-600/30 bg-red-950/5 p-4">
+                <canvas id="canvas-red" class="w-full h-48"></canvas>
+                <div class="mt-4 flex justify-between text-[8px] text-red-500 mono uppercase font-bold"><span>Optical_Telegraph_Sim</span><span>Freq: Low</span></div>
             </div>
         </section>
 
-        <section class="museum-wing max-w-4xl mx-auto text-center border-t border-red-600/20 pt-16">
-            <span class="text-red-500 text-[10px] tracking-widest block mb-4 uppercase">// Node 02: Printing Revolution</span>
-            <h2 class="text-6xl font-black italic text-white uppercase mb-12">Mass Data Replication</h2>
-            <div class="grid md:grid-cols-2 gap-12 text-sm text-blue-100/70 leading-loose text-left">
-                <p><strong class="text-red-500">Gutenberg (1440):</strong> Enabled mass production of knowledge, democratizing literacy across the globe.</p>
-                <p><strong class="text-red-500">Steam Press (1814):</strong> Shifted production into industrial speeds, boosting newspaper and book volume.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-                <div class="stat-pill"><span>3200 BCE</span> Cuneiform</div>
-                <div class="stat-pill"><span>200 BCE</span> Paper</div>
-                <div class="stat-pill"><span>1440</span> Print</div>
-                <div class="stat-pill"><span>1814</span> Steam</div>
-            </div>
-        </section>
-
-        <section class="museum-wing grid md:grid-cols-2 gap-16 items-center">
-            <div class="signal-deck border border-blue-500/20 bg-black/40 p-2">
-                <div class="bg-blue-900/5 p-6 border border-blue-500/10">
-                    <div class="flex justify-between text-[9px] mb-4 text-blue-500 uppercase font-bold"><span>RADIO_SINE_BLUEPRINT</span><span>ANALOG_HF</span></div>
-                    <canvas id="canvas-radio" class="w-full h-48"></canvas>
-                </div>
+        <section class="museum-node grid md:grid-cols-2 gap-20 items-center">
+            <div class="signal-deck border-green-600/30 bg-green-950/5 p-4">
+                <canvas id="canvas-green" class="w-full h-48"></canvas>
+                <div class="mt-4 flex justify-between text-[8px] text-green-500 mono uppercase font-bold"><span>Mechanized_Print_Logic</span><span>Status: Data_Mass</span></div>
             </div>
             <div>
-                <div class="mb-6 flex items-center gap-3">
-                    <span class="w-8 h-[1px] bg-blue-500"></span>
-                    <span class="text-blue-500 text-[10px] tracking-widest font-bold uppercase">Node_03 // Electric_Age</span>
-                </div>
-                <h2 class="text-5xl font-black italic text-white uppercase mb-8">Telecommunications</h2>
-                <div class="space-y-6 text-blue-100/70 text-sm leading-relaxed">
-                    <p><strong class="text-blue-400 uppercase">Telegraph (1844):</strong> Samuel Morse’s breakthrough in instant long-distance data.</p>
-                    <p><strong class="text-blue-400 uppercase">Telephone & TV:</strong> Bell (1876) enabled voice; Marconi (1896) enabled radio; 1927 saw the first TV transmission.</p>
+                <span class="text-green-500 text-[10px] tracking-widest font-bold uppercase border-b border-green-600/50 pb-2">Node_02 // Information Democracy</span>
+                <h2 class="text-5xl font-black italic uppercase mt-6 mb-8 text-glow-green">The Age of Print</h2>
+                <div class="space-y-6 text-white/70 text-sm leading-relaxed">
+                    <p><strong class="text-green-400">Gutenberg (1440):</strong> Johannes Gutenberg’s printing press allowed mass production of knowledge, permanently changing human literacy.</p>
+                    <p><strong class="text-green-400">Steam Revolution (1814):</strong> Mechanized steam-powered presses accelerated production to industrial levels, launching the modern newspaper era.</p>
                 </div>
             </div>
         </section>
 
-        <section class="museum-node border-y border-blue-500/10 py-24 bg-blue-950/5">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-red-500 text-[10px] tracking-widest uppercase animate-pulse font-bold">Node 04: The Neural Web</span>
-                <h2 class="text-6xl font-black italic text-white uppercase mt-4">Internet Revolution</h2>
-                <p class="mt-8 text-blue-200/50 text-[10px] leading-relaxed uppercase tracking-[0.5em]">ARPANET (1969) // WWW (1989) // AI (Present)</p>
+        <section class="museum-node grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+                <span class="text-blue-500 text-[10px] tracking-widest font-bold uppercase border-b border-blue-600/50 pb-2">Node_03 // The Electric Bridge</span>
+                <h2 class="text-5xl font-black italic uppercase mt-6 mb-8 text-glow-blue">Telecommunications</h2>
+                <div class="space-y-6 text-white/70 text-sm leading-relaxed">
+                    <p><strong class="text-blue-400">1844 Telegraph:</strong> Samuel Morse enables instant long-distance data via electrical pulses.</p>
+                    <p><strong class="text-blue-400">Wireless Era:</strong> Bell’s Telephone (1876) and Marconi’s Radio (1896) broke the physical barrier of wires.</p>
+                    <p><strong class="text-blue-400">Television (1927):</strong> The era of mass visual synchronization begins.</p>
+                </div>
             </div>
-            <div class="p-8 border border-blue-500/20 bg-black relative">
-                <div class="flex justify-between text-[9px] text-red-500 mb-4 font-bold mono"><span>NEURAL_PACKET_STREAM</span><span>ENCRYPTED_DATA</span></div>
-                <canvas id="canvas-neural" class="w-full h-48"></canvas>
+            <div class="signal-deck border-blue-600/30 bg-blue-950/5 p-4">
+                <canvas id="canvas-blue" class="w-full h-48"></canvas>
+                <div class="mt-4 flex justify-between text-[8px] text-blue-500 mono uppercase font-bold"><span>Radio_Wavefront_Blueprint</span><span>Type: Analog_HF</span></div>
+            </div>
+        </section>
+
+        <section class="museum-node grid md:grid-cols-2 gap-20 items-center">
+            <div class="signal-deck border-purple-600/30 bg-purple-950/5 p-4">
+                <canvas id="canvas-purple" class="w-full h-48"></canvas>
+                <div class="mt-4 flex justify-between text-[8px] text-purple-500 mono uppercase font-bold"><span>Neural_Packet_Burst</span><span>Status: Quantum_Active</span></div>
+            </div>
+            <div>
+                <span class="text-purple-500 text-[10px] tracking-widest font-bold uppercase border-b border-purple-600/50 pb-2">Node_04 // The Global Brain</span>
+                <h2 class="text-5xl font-black italic uppercase mt-6 mb-8 text-glow-purple">Digital Revolution</h2>
+                <div class="space-y-6 text-white/70 text-sm leading-relaxed">
+                    <p><strong class="text-purple-400">ARPANET (1969) & WWW (1989):</strong> The network evolves into an instant data exchange. The 2007 iPhone launch puts this power into every pocket.</p>
+                    <p><strong class="text-purple-400">Present Era:</strong> AI, 5G Connectivity, and instant global interactive communication redefine the human experience.</p>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="py-60 text-center relative border-t border-red-600/20">
-        <h2 class="text-8xl font-black text-red-600 italic tracking-tighter opacity-80 animate-pulse uppercase">End Transmission</h2>
-        <p class="text-[10px] tracking-[1.5em] text-blue-500/50 uppercase mt-4">Archive_Complete // Museum_Offline</p>
+    <section class="py-32 bg-white/5 border-y border-white/10 px-6">
+        <h3 class="text-center text-[10px] tracking-[1em] text-white/30 uppercase mb-20">Consolidated Chronological Milestones</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="milestone-box border-red-600/20"><span>3200 BCE</span> Cuneiform</div>
+            <div class="milestone-box border-red-600/20"><span>200 BCE</span> Paper</div>
+            <div class="milestone-box border-green-600/20"><span>1440</span> Print Press</div>
+            <div class="milestone-box border-blue-600/20"><span>1844</span> Telegraph</div>
+            <div class="milestone-box border-blue-600/20"><span>1876</span> Telephone</div>
+            <div class="milestone-box border-blue-600/20"><span>1927</span> Television</div>
+            <div class="milestone-box border-purple-600/20"><span>1989</span> Web (WWW)</div>
+            <div class="milestone-box border-purple-600/20"><span>2007</span> iPhone</div>
+        </div>
+    </section>
+
+    <footer class="py-60 text-center">
+        <h2 class="text-6xl font-black text-white italic tracking-tighter animate-pulse uppercase opacity-20">End Transmission</h2>
     </footer>
 
     <script>
-        function initSignal(id, type, color) {
+        function drawSpectrum(id, type, color) {
             const canvas = document.getElementById(id);
             const ctx = canvas.getContext('2d');
-            let offset = 0;
+            let time = 0;
 
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.beginPath();
                 ctx.strokeStyle = color;
-                ctx.lineWidth = 1.8;
+                ctx.lineWidth = 1.5;
                 ctx.shadowBlur = 15;
                 ctx.shadowColor = color;
 
                 for (let x = 0; x < canvas.width; x++) {
                     let y = 75;
                     if (type === 'hero') {
-                        y = 75 + Math.sin(x * 0.02 + offset) * 35;
-                    } else if (type === 'optical') {
-                        // Square waves for binary Morse/Optical
-                        y = 75 + (Math.sin(x * 0.08 + offset) > 0 ? 40 : -40);
-                    } else if (type === 'radio') {
-                        // High fidelity Sine waves
-                        y = 75 + Math.sin(x * 0.06 + offset) * 25 + Math.sin(x * 0.12 + offset) * 10;
-                    } else if (type === 'neural') {
-                        // Glitchy packet waves
-                        y = 75 + Math.tan(x * 0.015 + offset) * 3;
+                        y = 75 + Math.sin(x * 0.02 + time) * 30 + Math.cos(x * 0.05 + time) * 20;
+                    } else if (type === 'red') {
+                        y = 75 + (Math.sin(x * 0.08 + time) > 0 ? 40 : -40); // Morse pulses
+                    } else if (type === 'green') {
+                        y = 75 + Math.sin(x * 0.1 + time) * 15; // Rhythmic press
+                    } else if (type === 'blue') {
+                        y = 75 + Math.sin(x * 0.05 + time) * 25 + Math.sin(x * 0.2 + time) * 5; // Radio waves
+                    } else if (type === 'purple') {
+                        y = 75 + Math.tan(x * 0.01 + time) * 2; // Data packets
                         if(y > 140 || y < 10) y = 75;
                     }
                     ctx.lineTo(x, y);
                 }
                 ctx.stroke();
-                offset += 0.1;
+                time += 0.08;
                 requestAnimationFrame(animate);
             }
             animate();
         }
 
         window.onload = () => {
-            initSignal('hero-glitch-canvas', 'hero', '#0ea5e9');
-            initSignal('canvas-optical', 'optical', '#dc2626');
-            initSignal('canvas-radio', 'radio', '#3b82f6');
-            initSignal('canvas-neural', 'neural', '#dc2626');
+            drawSpectrum('hero-spectrum-canvas', 'hero', '#fff');
+            drawSpectrum('canvas-red', 'red', '#dc2626');
+            drawSpectrum('canvas-green', 'green', '#16a34a');
+            drawSpectrum('canvas-blue', 'blue', '#2563eb');
+            drawSpectrum('canvas-purple', 'purple', '#9333ea');
         };
     </script>
 </body>
