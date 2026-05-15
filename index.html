@@ -4,8 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGNAL_83 // THE EVOLUTION ARCHIVE</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-red: #ff003c;
+            --accent-blue: #00f2ff;
+            --accent-green: #00ff41;
+            --accent-purple: #bc13fe;
+            --bg-dark: #000814;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg-dark); color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
+
+        /* SCROLL SNAP ENGINE */
+        .museum-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scrollbar-width: none;
+        }
+        .museum-container::-webkit-scrollbar { display: none; }
+
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+
+        /* GRID BACKGROUND */
+        .grid-bg {
+            position: fixed; inset: 0;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none; z-index: -1;
+        }
+
+        /* HUD ELEMENTS */
+        .scanline {
+            width: 100%; height: 2px; background: rgba(0, 242, 255, 0.1);
+            position: fixed; top: 0; z-index: 100; pointer-events: none;
+            animation: scan 10s linear infinite;
+        }
+        @keyframes scan { from { top: 0; } to { top: 100%; } }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: linear-gradient(to bottom, black, transparent);
+        }
+
+        /* ANIMATIONS */
+        .glitch-text:hover {
+            animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+            color: var(--accent-blue);
+        }
+
+        .hud-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px; position: relative; background: rgba(0,0,0,0.4);
+        }
+        .hud-border::before {
+            content: ''; position: absolute; top: -2px; left: -2px; width: 20px; height: 20px;
+            border-top: 2px solid var(--accent-blue); border-left: 2px solid var(--accent-blue);
+        }
+
+        .signal-canvas { position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; opacity: 0.3; }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
 </head>
 <body>
 
@@ -13,172 +96,193 @@
     <div class="grid-bg"></div>
 
     <nav>
-        <div class="nav-brand">
-            <div class="pulse-dot"></div>
-            <span class="nav-text">SIGNAL ARCHIVE // v0.83</span>
+        <div class="flex items-center gap-3">
+            <div class="w-2 h-2 bg-red-600 animate-ping"></div>
+            <span class="font-mono text-[10px] tracking-widest uppercase">Signal Archive // v0.83</span>
         </div>
-        <div class="nav-status">FREQUENCY: 44.1kHz // STATUS: LINKED</div>
+        <div class="font-mono text-[9px] opacity-40 uppercase">Frequency: 44.1kHz // Status: Linked</div>
     </nav>
 
     <div class="museum-container">
         
-        <section class="slide" id="slide-1">
-            <div class="center-content">
-                <p class="arch-tag red-text">[ INITIALIZING SEQUENCE ]</p>
-                <h1 class="glitch-title">SIGNAL</h1>
-                <p class="sub-tag blue-text">EVOLUTION OF HUMAN COMMUNICATION</p>
-                <div class="hero-stats">
-                    <div class="stat-item">3,200 YRS<br>HISTORY</div>
-                    <div class="stat-item">5 ERAS<br>CATALOGED</div>
-                    <div class="stat-item">1ms<br>LATENCY</div>
+        <section class="slide">
+            <div class="text-center">
+                <p class="font-mono text-red-500 tracking-[1.5em] text-xs mb-4 uppercase">[ Initializing Sequence ]</p>
+                <h1 class="text-8xl md:text-[12rem] font-black italic uppercase leading-none glitch-text">SIGNAL</h1>
+                <p class="font-mono text-blue-300 tracking-[0.6em] text-sm mt-6">Evolution of Human Communication</p>
+                <div class="flex justify-center gap-12 mt-16 font-mono text-[10px] opacity-50">
+                    <div>3,200 YRS<br>HISTORY</div>
+                    <div>5 ERAS<br>CATALOGED</div>
+                    <div>1ms<br>LATENCY</div>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-2">
-            <div class="hud-border max-width-md">
-                <h2 class="hud-header blue-text">// MISSION BRIEFING</h2>
-                <p class="mission-text">
+        <section class="slide">
+            <div class="max-w-4xl hud-border">
+                <h2 class="font-mono text-blue-400 text-xl mb-6 uppercase tracking-widest">// Mission Briefing</h2>
+                <p class="text-2xl font-light leading-relaxed text-gray-300">
                     Every technological revolution has been a revolution in communication. 
-                    <span class="highlight">Writing</span> allowed laws to outlive authors. 
-                    <span class="highlight">Printing</span> made dissent scalable. 
-                    <span class="highlight">Electricity</span> annihilated distance. 
+                    <span class="text-white font-bold">Writing</span> allowed laws to outlive authors. 
+                    <span class="text-white font-bold">Printing</span> made dissent scalable. 
+                    <span class="text-white font-bold">Electricity</span> annihilated distance. 
                     Today, AI speaks every language at once.
                 </p>
             </div>
         </section>
 
-        <section class="slide node-bg-red" id="slide-3">
-            <div class="center-content">
-                <p class="arch-tag red-text">[ PHASE 01 ]</p>
-                <h2 class="node-title">NODE 01:<br>SURFACES & SYMBOLS</h2>
-                <p class="date-tag">3000 BCE – 1400 CE</p>
+        <section class="slide bg-red-900/5">
+            <div class="text-center">
+                <p class="font-mono text-red-600 text-sm mb-4 tracking-widest">[ PHASE 01 ]</p>
+                <h2 class="text-7xl font-black italic uppercase">Node 01:<br>Surfaces & Symbols</h2>
+                <p class="font-mono text-white/30 mt-8">3000 BCE – 1400 CE</p>
             </div>
         </section>
 
-        <section class="slide" id="slide-4">
-            <div class="grid-3">
-                <div class="card">
-                    <h3 class="red-text">1200 BC</h3>
-                    <p><strong>Smoke Signals:</strong> Coordinating armies across ranges. The first optical bandwidth.</p>
+        <section class="slide">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+                <div class="p-8 border border-white/5 bg-white/5">
+                    <h3 class="font-mono text-red-500 mb-4">1200 BC</h3>
+                    <p class="text-sm text-gray-400"><strong>Smoke Signals:</strong> Coordinating armies across mountain ranges. The first optical bandwidth.</p>
                 </div>
-                <div class="card">
-                    <h3 class="red-text">776 BC</h3>
-                    <p><strong>Pigeons:</strong> Biological data transmission carrying news across the Greek world.</p>
+                <div class="p-8 border border-white/5 bg-white/5">
+                    <h3 class="font-mono text-red-500 mb-4">776 BC</h3>
+                    <p class="text-sm text-gray-400"><strong>Pigeons:</strong> Biological data transmission carrying Olympic news across the Greek world.</p>
                 </div>
-                <div class="card">
-                    <h3 class="red-text">200 BC</h3>
-                    <p><strong>Relay Stations:</strong> Horses at precise intervals — the ancient broadband.</p>
+                <div class="p-8 border border-white/5 bg-white/5">
+                    <h3 class="font-mono text-red-500 mb-4">200 BC</h3>
+                    <p class="text-sm text-gray-400"><strong>Relay Stations:</strong> Horses at precise intervals — the ancient world's equivalent of a backbone network.</p>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-5">
-            <div class="split-view">
-                <div class="text-content">
-                    <h2 class="section-header blue-text">WRITING TECH</h2>
-                    <ul class="fact-list">
-                        <li><strong>CUNEIFORM:</strong> First durable data storage on clay.</li>
-                        <li><strong>PAPYRUS:</strong> Lightweight portability for information.</li>
-                        <li><strong>PAPER (105 CE):</strong> Lowering the cost of recording knowledge.</li>
+        <section class="slide">
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl">
+                <div>
+                    <h2 class="text-4xl font-bold uppercase mb-8 italic text-blue-400">Writing Tech</h2>
+                    <ul class="space-y-6 font-mono text-sm text-gray-400">
+                        <li class="border-l-2 border-red-600 pl-4"><strong>CUNEIFORM:</strong> First durable data storage on clay.</li>
+                        <li class="border-l-2 border-red-600 pl-4"><strong>PAPYRUS:</strong> Lightweight portability for information.</li>
+                        <li class="border-l-2 border-red-600 pl-4"><strong>PAPER (105 CE):</strong> Cai Lun lowers the cost of recording knowledge.</li>
                     </ul>
                 </div>
-                <div class="image-box">
-                    <div class="placeholder-img">VISUAL_ARCHIVE_NODE_05</div>
+                <div class="bg-blue-900/10 border border-blue-500/20 p-4">
+                    <div class="aspect-video bg-black/40 flex items-center justify-center font-mono text-[10px] opacity-50 uppercase tracking-widest">Visual_Archive_Pending</div>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-6">
-            <div class="center-content max-width-sm">
-                <p class="arch-tag green-text">[ PHASE 02 ]</p>
-                <h2 class="node-title-sm">MECHANICAL ERA</h2>
-                <p class="summary-text">
-                    Gutenberg (1440) breaks the monopoly of handwritten text. 
-                    The Steam Press (1814) scales production to thousands of pages per hour.
+        <section class="slide">
+            <div class="text-center max-w-3xl">
+                <p class="font-mono text-green-500 mb-4">[ PHASE 02 ]</p>
+                <h2 class="text-6xl font-black italic uppercase mb-8">Mechanical Era</h2>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    Johannes Gutenberg (1440) breaks the monopoly of handwritten manuscripts. 
+                    The Steam Press (1814) accelerates production to thousands of pages per hour.
                 </p>
             </div>
         </section>
 
-        <section class="slide node-bg-blue" id="slide-7">
-            <div class="center-content">
-                <p class="arch-tag blue-text">[ PHASE 03 ]</p>
-                <h2 class="node-title">NODE 02:<br>ELECTRIC PULSE</h2>
-                <p class="date-tag">1831 – 1920s</p>
+        <section class="slide bg-blue-900/5">
+            <div class="text-center">
+                <p class="font-mono text-blue-600 text-sm mb-4 tracking-widest">[ PHASE 03 ]</p>
+                <h2 class="text-7xl font-black italic uppercase">Node 02:<br>Electric Pulse</h2>
+                <p class="font-mono text-white/30 mt-8">1831 – 1920s</p>
             </div>
         </section>
 
-        <section class="slide" id="slide-8">
-            <div class="grid-2">
+        <section class="slide">
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl">
                 <div class="hud-border">
-                    <h3 class="blue-text">1844: TELEGRAPH</h3>
-                    <p>Distance decoupled from physical transport. "What hath God wrought?"</p>
+                    <h3 class="text-blue-500 font-mono mb-4">1844: TELEGRAPH</h3>
+                    <p class="text-sm">"What hath God wrought?" — Distance is finally decoupled from physical transportation.</p>
                 </div>
                 <div class="hud-border">
-                    <h3 class="blue-text">1876: TELEPHONE</h3>
-                    <p>The human voice travels through wire. Intimacy becomes instantaneous.</p>
+                    <h3 class="text-blue-500 font-mono mb-4">1876: TELEPHONE</h3>
+                    <p class="text-sm">The human voice travels through wire. Intimacy becomes instantaneous.</p>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-9">
-            <div class="center-content">
-                <h2 class="section-header">WIRELESS MASTERY</h2>
-                <p class="arch-tag blue-text">MARCONI 1901: TRANSATLANTIC SUCCESS</p>
-                <div class="loading-bar-container">
-                    <div class="loading-bar-fill"></div>
+        <section class="slide">
+            <div class="text-center">
+                <h2 class="text-5xl font-bold uppercase mb-6">Wireless Mastery</h2>
+                <p class="font-mono text-blue-300 mb-12">Marconi 1901: The Letter 'S' travels across an ocean.</p>
+                <div class="w-96 h-1 bg-white/10 mx-auto relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-500 w-1/2 animate-pulse"></div>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-10">
-            <div class="center-content">
-                <h2 class="node-title-sm">MASS SYNC</h2>
-                <div class="broadcast-grid">
-                    <div class="b-item">RADIO (1920) // ONE VOICE</div>
-                    <div class="b-item">TV (1927) // ONE VISION</div>
-                    <div class="b-item wide purple-text">TRANSISTOR (1947) // MINIATURIZATION</div>
+        <section class="slide">
+            <div class="flex flex-col items-center">
+                <h2 class="text-6xl font-black italic uppercase mb-12">Mass Sync</h2>
+                <div class="grid grid-cols-2 gap-4 font-mono text-[10px]">
+                    <div class="p-4 border border-purple-500/30">RADIO (1920) // ONE VOICE</div>
+                    <div class="p-4 border border-purple-500/30">TV (1927) // ONE VISION</div>
+                    <div class="p-4 border border-purple-500/30 col-span-2 text-center text-purple-400">TRANSISTOR (1947) // MINIATURIZATION</div>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-11">
-            <div class="max-width-md">
-                <h2 class="section-header green-text">ERA 04: THE NETWORK</h2>
-                <p class="mission-text">
+        <section class="slide">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl font-bold italic mb-6 uppercase text-accent-green">Era 04: The Network</h2>
+                <p class="text-lg text-gray-400 mb-8">
                     ARPANET (1969) introduces packet switching. Tim Berners-Lee (1989) invents the World Wide Web. 
-                    Decentralization of global consciousness.
+                    Communication moves from a linear path to a decentralized ecosystem.
                 </p>
-                <div class="tag-row">
-                    <span class="tag">TCP/IP ACTIVE</span>
-                    <span class="tag">HTML 1.0</span>
+                <div class="flex gap-4 font-mono text-[10px]">
+                    <span class="px-2 py-1 bg-green-900/40 border border-green-500/50">TCP/IP ACTIVE</span>
+                    <span class="px-2 py-1 bg-green-900/40 border border-green-500/50">HTML 1.0 FOUNDED</span>
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="slide-12">
-            <div class="center-content">
-                <h2 class="glitch-title-sm purple-text">INTELLIGENT NET</h2>
-                <p class="mission-text max-width-sm">
-                    AI models exceed 1 trillion parameters. Non-biological entities participate in human discourse.
+        <section class="slide">
+            <div class="text-center">
+                <h2 class="text-7xl font-black italic uppercase mb-8 glitch-text">Intelligent<br>Net</h2>
+                <p class="text-xl text-purple-400 max-w-2xl font-light">
+                    AI models exceed 1 trillion parameters. Non-biological entities participate in human discourse as creative partners.
                 </p>
             </div>
         </section>
 
-        <section class="slide" id="slide-13">
-            <div class="center-content">
-                <h1 class="end-title red-text">END TRANSMISSION</h1>
-                <div class="footer-stats">
-                    <div class="f-stat">1.3M KM<br>FIBER</div>
-                    <div class="f-stat">100B<br>MESSAGES</div>
-                    <div class="f-stat">5.4B<br>USERS</div>
+        <section class="slide">
+            <div class="text-center">
+                <h1 class="text-8xl font-black text-red-600 mb-12 uppercase italic">End Transmission</h1>
+                <div class="grid grid-cols-3 gap-12 max-w-4xl mx-auto opacity-30 font-mono text-xs uppercase tracking-widest">
+                    <div>1.3M KM<br>FIBER CABLES</div>
+                    <div>100B<br>DAILY MESSAGES</div>
+                    <div>5.4B<br>ACTIVE USERS</div>
                 </div>
-                <p class="footer-note">ARCHIVE SEQUENCE COMPLETE // SIGNAL 0.83-A</p>
+                <p class="mt-24 text-[10px] tracking-[2em] opacity-10 uppercase">Archive Sequence Complete</p>
             </div>
         </section>
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // BACKGROUND WAVE GENERATOR (REPEATS FOR TEXTURE)
+        const canvases = document.querySelectorAll('.signal-canvas');
+        function drawWave(ctx, color, time) {
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 1;
+            for(let x = 0; x < ctx.canvas.width; x++) {
+                const y = 50 + Math.sin(x * 0.02 + time) * 20;
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        }
+
+        let time = 0;
+        function animate() {
+            time += 0.05;
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
