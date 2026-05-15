@@ -1,104 +1,69 @@
+/* THEME VARIABLES */
 :root {
-    --accent-red: #ff003c;
-    --accent-blue: #00f2ff;
-    --accent-green: #00ff41;
-    --accent-purple: #bc13fe;
-    --bg-dark: #000814;
-    --text-dim: rgba(255, 255, 255, 0.6);
+    --bg: #050505;
+    --text: #ffffff;
+    --red: #ff3e3e;
+    --blue: #00d9ff;
+    --green: #00ff66;
+    --purple: #bf00ff;
+    --border: rgba(255, 255, 255, 0.1);
 }
 
+/* BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background: var(--bg-dark);
-    color: white;
+    background-color: var(--bg);
+    color: var(--text);
     font-family: 'Inter', sans-serif;
-    overflow: hidden;
+    line-height: 1.6;
 }
 
-/* SCROLL ENGINE */
-.museum-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none;
+.container { max-width: 1000px; margin: 0 auto; padding: 100px 20px; }
+
+/* NAVIGATION */
+.top-nav {
+    position: fixed; top: 0; width: 100%; height: 60px;
+    background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 40px; z-index: 100; font-family: 'Space Mono'; font-size: 12px;
 }
 
-.slide {
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-}
+/* NODES (SLIDES) */
+.node { padding: 100px 0; border-bottom: 1px solid var(--border); }
+.center { text-align: center; }
 
-/* HUD ELEMENTS */
-.grid-bg {
-    position: fixed; inset: 0;
-    background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -1;
-}
-
-.scanline {
-    width: 100%; height: 2px; background: rgba(0, 242, 255, 0.1);
-    position: fixed; top: 0; z-index: 1000; pointer-events: none;
-    animation: scan 10s linear infinite;
-}
-
-@keyframes scan { from { top: 0; } to { top: 100%; } }
-
-nav {
-    position: fixed; top: 0; width: 100%; z-index: 999; padding: 20px 40px;
-    display: flex; justify-content: space-between; font-family: 'Space Mono', monospace;
-}
-
-.pulse-dot {
-    width: 8px; height: 8px; background: var(--accent-red);
-    border-radius: 50%; animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+.hero-node { text-align: center; padding: 150px 0; }
+.hero-node h1 { font-size: 120px; font-weight: 900; letter-spacing: -5px; line-height: 1; }
+.tagline { font-family: 'Space Mono'; color: var(--blue); letter-spacing: 5px; margin-top: 20px; text-transform: uppercase; }
 
 /* TYPOGRAPHY */
-.glitch-title { font-size: clamp(4rem, 15vw, 12rem); font-weight: 900; italic: true; line-height: 0.9; }
-.node-title { font-size: clamp(2rem, 8vw, 6rem); font-weight: 900; line-height: 1; }
-.red-text { color: var(--accent-red); }
-.blue-text { color: var(--accent-blue); }
-.green-text { color: var(--accent-green); }
-.purple-text { color: var(--accent-purple); }
-
-.arch-tag { font-family: 'Space Mono'; letter-spacing: 1.2em; font-size: 0.7rem; margin-bottom: 1rem; }
+h2 { font-size: 40px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
+h3 { font-size: 30px; font-weight: 700; text-transform: uppercase; }
+.red { color: var(--red); }
+.blue { color: var(--blue); }
+.green { color: var(--green); }
+.purple { color: var(--purple); }
+.label { font-family: 'Space Mono'; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
 
 /* COMPONENTS */
-.hud-border {
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px; background: rgba(0,0,0,0.4);
-    position: relative;
-}
+.hud-box { padding: 40px; border: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+.border-blue { border-color: var(--blue); }
+.border-green { border-color: var(--green); }
 
-.hud-border::before {
-    content: ''; position: absolute; top: -2px; left: -2px; width: 20px; height: 20px;
-    border-top: 2px solid var(--accent-blue); border-left: 2px solid var(--accent-blue);
-}
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { padding: 30px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
 
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1200px; }
-.card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 30px; }
+.divider-node { text-align: center; background: rgba(255, 255, 255, 0.02); }
+.node-number { font-size: 80px; opacity: 0.2; margin-bottom: -20px; }
 
-.loading-bar-container { width: 300px; height: 4px; background: rgba(255,255,255,0.1); margin: 40px auto; overflow: hidden; }
-.loading-bar-fill { height: 100%; width: 50%; background: var(--accent-blue); animation: load 2s infinite linear; }
+.content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
+.data-block { height: 200px; background: repeating-linear-gradient(45deg, #111, #111 10px, #151515 10px, #151515 20px); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Space Mono'; font-size: 10px; color: var(--border); }
 
-@keyframes load { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
+.broadcast-box { border: 1px solid var(--border); font-family: 'Space Mono'; }
+.b-row { display: flex; justify-content: space-between; padding: 15px 30px; border-bottom: 1px solid var(--border); }
+.b-row:last-child { border: none; }
 
-.broadcast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 40px; font-family: 'Space Mono'; font-size: 0.7rem; }
-.b-item { border: 1px solid rgba(255,255,255,0.1); padding: 15px; }
-.b-item.wide { grid-column: span 2; text-align: center; }
+.final-stats { display: flex; justify-content: space-around; margin-top: 50px; font-family: 'Space Mono'; font-size: 12px; color: rgba(255,255,255,0.5); }
 
-/* UTILS */
-.max-width-md { max-width: 800px; }
-.max-width-sm { max-width: 600px; }
-.center-content { text-align: center; }
+.footer-node { text-align: center; padding: 200px 0; border: none; }
