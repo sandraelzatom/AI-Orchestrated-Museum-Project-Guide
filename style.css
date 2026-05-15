@@ -1,117 +1,63 @@
 :root {
-    --jarvis-blue: #0ea5e9;
-    --jarvis-red: #dc2626;
-    --dark-void: #00040a;
+    --blue: #0ea5e9;
+    --red: #dc2626;
+    --bg: #00040a;
 }
 
 body {
-    background-color: var(--dark-void);
+    background-color: var(--bg);
     color: white;
-    cursor: crosshair;
 }
 
-/* BLUEPRINT GRID BACKGROUND */
+/* BLUEPRINT GRID */
 .grid-bg {
     background-image: 
         linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-size: 50px 50px;
     background-attachment: fixed;
 }
 
-/* SCANLINE & VIGNETTE HUD EFFECT */
+/* JARVIS HUD OVERLAYS */
 .scanline {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 0%,
-        rgba(14, 165, 233, 0.03) 50%,
-        rgba(255,255,255,0) 100%
-    );
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(14, 165, 233, 0.03) 50%, rgba(255,255,255,0) 100%);
     background-size: 100% 10px;
-    position: fixed;
-    z-index: 100;
-    pointer-events: none;
-    animation: scanMove 12s linear infinite;
+    position: fixed; z-index: 100; pointer-events: none;
+    animation: scanMove 10s linear infinite;
 }
 
 .vignette {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background: radial-gradient(circle, transparent 40%, black 150%);
-    z-index: 90;
-    pointer-events: none;
+    z-index: 90; pointer-events: none;
 }
 
 @keyframes scanMove {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100%); }
 }
 
-/* MUSEUM CARDS */
-.museum-wing {
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
+/* CARDS & PILLS */
+.museum-wing { transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
 
-.signal-deck {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
-}
-
-.signal-deck::after {
-    content: "SIG_ANALYSIS_ACTIVE";
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    font-size: 8px;
-    color: var(--jarvis-red);
-    letter-spacing: 2px;
-}
-
-/* BUTTONS & PILLS */
-.milestone-pill {
+.stat-pill {
     border: 1px solid rgba(14, 165, 233, 0.2);
     padding: 15px;
     background: rgba(14, 165, 233, 0.03);
-    text-align: center;
-    font-size: 9px;
-    text-transform: uppercase;
-    color: var(--jarvis-blue);
+    font-size: 9px; text-transform: uppercase;
 }
 
-.milestone-pill span {
-    display: block;
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 4px;
+.stat-pill span {
+    display: block; font-size: 16px; font-weight: bold; color: var(--blue); margin-bottom: 4px;
 }
 
-.feature-card {
-    border: 1px solid rgba(14, 165, 233, 0.1);
-    padding: 30px;
-    text-align: center;
-    background: rgba(0,0,0,0.5);
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
+.signal-deck { box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); }
 
-.feature-card span {
-    display: block;
-    font-size: 24px;
-    font-weight: black;
-    color: white;
-    margin-bottom: 10px;
-}
+.text-glow-blue { text-shadow: 0 0 30px var(--blue); }
 
-/* GLOWS */
-.text-glow-blue { text-shadow: 0 0 30px var(--jarvis-blue); }
-.text-glow-red { text-shadow: 0 0 30px var(--jarvis-red); }
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--red); }
 
-/* SCROLLBAR */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--dark-void); }
-::-webkit-scrollbar-thumb { background: var(--jarvis-red); }
+
