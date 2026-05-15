@@ -1,63 +1,68 @@
 :root {
-    --blue: #0ea5e9;
-    --red: #dc2626;
     --bg: #00040a;
 }
 
 body {
     background-color: var(--bg);
-    color: white;
+    cursor: crosshair;
 }
 
 /* BLUEPRINT GRID */
 .grid-bg {
     background-image: 
-        linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     background-attachment: fixed;
 }
 
-/* JARVIS HUD OVERLAYS */
+/* HUD EFFECTS */
 .scanline {
     width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(14, 165, 233, 0.03) 50%, rgba(255,255,255,0) 100%);
-    background-size: 100% 10px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255, 0.02) 50%, transparent 100%);
+    background-size: 100% 4px;
     position: fixed; z-index: 100; pointer-events: none;
-    animation: scanMove 10s linear infinite;
 }
 
 .vignette {
     position: fixed; inset: 0;
-    background: radial-gradient(circle, transparent 40%, black 150%);
+    background: radial-gradient(circle, transparent 30%, black 150%);
     z-index: 90; pointer-events: none;
 }
 
-@keyframes scanMove {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(100%); }
+/* GLOWS */
+.text-glow-red { text-shadow: 0 0 20px #dc2626; }
+.text-glow-green { text-shadow: 0 0 20px #16a34a; }
+.text-glow-blue { text-shadow: 0 0 20px #2563eb; }
+.text-glow-purple { text-shadow: 0 0 20px #9333ea; }
+
+/* SIGNAL CARDS */
+.signal-deck {
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    background: black;
 }
 
-/* CARDS & PILLS */
-.museum-wing { transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-
-.stat-pill {
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    padding: 15px;
-    background: rgba(14, 165, 233, 0.03);
-    font-size: 9px; text-transform: uppercase;
+/* MILESTONE DASHBOARD */
+.milestone-box {
+    border: 1px solid;
+    padding: 20px;
+    background: rgba(255,255,255,0.02);
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.stat-pill span {
-    display: block; font-size: 16px; font-weight: bold; color: var(--blue); margin-bottom: 4px;
+.milestone-box span {
+    display: block; font-size: 18px; font-weight: bold; color: white; margin-bottom: 5px;
 }
 
-.signal-deck { box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); }
-
-.text-glow-blue { text-shadow: 0 0 30px var(--blue); }
+.milestone-box:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-5px);
+}
 
 /* CUSTOM SCROLLBAR */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-thumb { background: var(--red); }
-
-
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: white; }
