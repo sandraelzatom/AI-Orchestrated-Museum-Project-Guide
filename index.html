@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SIGNAL // NEURAL ARC MUSEUM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="intro-terminal">
+        <div class="terminal-content">
+            <div id="typewriter"></div>
+            <span class="terminal-cursor"></span>
+        </div>
+    </div>
+
+    <canvas id="stars-canvas"></canvas>
+    <div class="scanline"></div>
+
+    <main id="main-content" class="hidden">
+        
+        <header class="h-screen flex flex-col justify-center items-center text-center p-6">
+            <span class="reveal tag">STATUS: INTERFACE_ACTIVE</span>
+            <h1 class="reveal glitch-text text-5xl md:text-8xl font-black mb-4">THE SIGNAL</h1>
+            <p class="reveal text-gray-500 max-w-lg font-mono text-sm">ARCHIVE 2026 // NEURAL INTERFACE DESIGNER PORTFOLIO</p>
+        </header>
+
+        <section id="about" class="py-24 px-8 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h2 class="text-3xl mb-6 cyan-glow-text">The New Frontier</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    I am a <strong>Neural Interface Designer</strong>. My work focuses on mapping human cognitive intent to digital systems. By studying the history of communication, I aim to build the next generation of thought-to-thought interfaces.
+                </p>
+            </div>
+            <div class="reveal glass-card">
+                <div class="corner-tl"></div><div class="corner-br"></div>
+                <h3 class="tag mb-4">COGNITIVE_MANIFESTO</h3>
+                <ul class="text-sm space-y-4">
+                    <li><span class="cyan-text">01</span> Synthetic Research & LLM Mapping</li>
+                    <li><span class="cyan-text">02</span> Neural Prototyping (EEG/Haptics)</li>
+                    <li><span class="cyan-text">03</span> Visual Data Synthesis</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="py-24 px-8 max-w-4xl mx-auto">
+            <h2 class="reveal text-center text-4xl mb-20 font-bold">SIGNAL ARCHIVE</h2>
+            
+            <div class="timeline-container">
+                <div class="reveal timeline-block glass-card mb-12">
+                    <span class="tag">ERA 01 // ANCIENT SURFACES</span>
+                    <h3>Cuneiform & Papyrus</h3>
+                    <p class="text-gray-500 text-sm mt-2">The birth of external memory. Sumerian reed styluses were the first "write heads," externalizing human thought onto clay.</p>
+                </div>
+
+                <div class="reveal timeline-block glass-card mb-12 border-l-purple">
+                    <span class="tag">ERA 02 // MECHANICAL MASS</span>
+                    <h3>The Gutenberg Galaxy</h3>
+                    <p class="text-gray-500 text-sm mt-2">1440: Information scaling. The printing press removed the monopoly on knowledge, enabling the first mass-media society.</p>
+                </div>
+
+                <div class="reveal timeline-block glass-card mb-12 border-l-red">
+                    <span class="tag">ERA 03 // ELECTRIC VELOCITY</span>
+                    <h3>Telegraph & Radio</h3>
+                    <p class="text-gray-500 text-sm mt-2">Decoupling distance. Communication moves from the speed of a horse to the speed of an electron.</p>
+                </div>
+
+                <div class="reveal timeline-block glass-card mb-12 pulse-border">
+                    <span class="tag">ERA 04 // THE NEURAL ERA</span>
+                    <h3>Planetary Connectivity</h3>
+                    <p class="text-gray-500 text-sm mt-2">The Global Brain. Thought-to-thought interfaces mediated by AI orchestration. The final dissolution of distance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-8 max-w-6xl mx-auto">
+            <h2 class="reveal text-center text-3xl mb-16">ACTIVE NEURAL NODES</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="reveal node-card p-8">
+                    <div class="icon-box">⌨️</div>
+                    <h4>Hardware Tinkering</h4>
+                    <p class="text-xs text-gray-500 mt-2">Designing custom mechanical haptics and sensory feedback loops.</p>
+                </div>
+                <div class="reveal node-card p-8">
+                    <div class="icon-box">🎨</div>
+                    <h4>Generative Art</h4>
+                    <p class="text-xs text-gray-500 mt-2">Visualizing abstract data streams and neural landscapes using AI.</p>
+                </div>
+                <div class="reveal node-card p-8">
+                    <div class="icon-box">🧪</div>
+                    <h4>Cognitive Science</h4>
+                    <p class="text-xs text-gray-500 mt-2">Exploring human-computer symbiosis and perception theory.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-20 text-center opacity-30 text-[10px] tracking-[0.5em]">
+            SESSION_TERMINATED // ARCHIVE_SAVED // 2026
+        </footer>
+    </main>
+
+    <script>
+        // --- TERMINAL TYPEWRITER ---
+        const textLines = [
+            ">> INITIALIZING HISTORY_LAB V1.0...",
+            ">> SCANNING ARCHIVAL FREQUENCIES...",
+            ">> DECRYPTING SIGNAL DATA...",
+            ">> ACCESS GRANTED. WELCOME, RESEARCHER."
+        ];
+        let lineIdx = 0, charIdx = 0;
+        const typewriter = document.getElementById('typewriter');
+
+        function typeEffect() {
+            if (lineIdx < textLines.length) {
+                if (charIdx < textLines[lineIdx].length) {
+                    typewriter.innerHTML += textLines[lineIdx][charIdx];
+                    charIdx++;
+                    setTimeout(typeEffect, 40);
+                } else {
+                    typewriter.innerHTML += "<br>";
+                    lineIdx++; charIdx = 0;
+                    setTimeout(typeEffect, 600);
+                }
+            } else {
+                setTimeout(() => {
+                    document.getElementById('intro-terminal').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('intro-terminal').style.display = 'none';
+                        document.getElementById('main-content').classList.remove('hidden');
+                        startScrollObserver();
+                    }, 1000);
+                }, 1000);
+            }
+        }
+
+        // --- STARS BACKGROUND ---
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        function initStars() {
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            stars = Array(150).fill().map(() => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                s: Math.random() * 2,
+                v: Math.random() * 0.4
+            }));
+        }
+        function animateStars() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(0, 242, 255, 0.4)";
+            stars.forEach(s => {
+                s.y -= s.v; if(s.y < 0) s.y = canvas.height;
+                ctx.beginPath(); ctx.arc(s.x, s.y, s.s, 0, Math.PI*2); ctx.fill();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        // --- SCROLL REVEAL ---
+        function startScrollObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        window.onload = () => { initStars(); animateStars(); typeEffect(); };
+    </script>
+</body>
+</html>
